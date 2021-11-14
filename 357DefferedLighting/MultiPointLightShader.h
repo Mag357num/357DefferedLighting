@@ -61,7 +61,7 @@ private:
 	XMMATRIX GetInvenseTranspose( CXMMATRIX ma );
 
 	bool SetShaderParameter( ID3D11DeviceContext*, CXMMATRIX, CXMMATRIX, CXMMATRIX, ID3D11ShaderResourceView*,
-		ID3D11ShaderResourceView*, ID3D11ShaderResourceView*, FXMVECTOR[], FXMVECTOR[] );
+		ID3D11ShaderResourceView*, ID3D11ShaderResourceView*, XMVECTOR[], XMVECTOR[] );
 	void RenderShader( ID3D11DeviceContext*, int );
 
 public:
@@ -73,6 +73,6 @@ public:
 	bool Initialize( ID3D11Device*, HWND );
 	void Shutdown( );
 	bool Render( ID3D11DeviceContext*, int, CXMMATRIX, CXMMATRIX, CXMMATRIX, ID3D11ShaderResourceView*,
-		ID3D11ShaderResourceView*, ID3D11ShaderResourceView*, FXMVECTOR diffuseColor[], FXMVECTOR PointLightPos[] );
+		ID3D11ShaderResourceView*, ID3D11ShaderResourceView*, XMVECTOR diffuseColor[], XMVECTOR PointLightPos[] );
 };
 #endif 

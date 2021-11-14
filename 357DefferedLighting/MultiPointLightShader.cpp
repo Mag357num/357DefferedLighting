@@ -38,7 +38,7 @@ void MultiPointLightShader::Shutdown( )
 }
 
 bool MultiPointLightShader::Render( ID3D11DeviceContext* d3dDeviceContext, int indexCount, CXMMATRIX worldMatrix, CXMMATRIX viewMatrix, CXMMATRIX ProjMatrix,
-	ID3D11ShaderResourceView* ColorTexture, ID3D11ShaderResourceView* NormalTexture, ID3D11ShaderResourceView* WposTexture, FXMVECTOR diffuseColor[], FXMVECTOR PointLightPos[] )
+	ID3D11ShaderResourceView* ColorTexture, ID3D11ShaderResourceView* NormalTexture, ID3D11ShaderResourceView* WposTexture, XMVECTOR diffuseColor[], XMVECTOR PointLightPos[] )
 {
 	bool result;
 
@@ -217,7 +217,7 @@ void MultiPointLightShader::OutputShaderErrorMessage( ID3D10Blob* errorMessage, 
 }
 
 bool MultiPointLightShader::SetShaderParameter( ID3D11DeviceContext* d3dDeviceContext, CXMMATRIX worldMatrix, CXMMATRIX viewMatrix, CXMMATRIX ProjMatrix,
-	ID3D11ShaderResourceView* ColorTexture, ID3D11ShaderResourceView* NormalTexture, ID3D11ShaderResourceView* WposTexture, FXMVECTOR diffuseColor[], FXMVECTOR PointLightPos[] )
+	ID3D11ShaderResourceView* ColorTexture, ID3D11ShaderResourceView* NormalTexture, ID3D11ShaderResourceView* WposTexture, XMVECTOR diffuseColor[], XMVECTOR PointLightPos[] )
 {
 	//第一，更新变换矩阵常量缓存的值
 	//将矩阵转置,在传入常量缓存前进行转置,因为GPU对矩阵数据会自动进行一次转置
